@@ -18,7 +18,7 @@ const doctors = [
         fee: 750,
         days: "Tuesday - Saturday",
         times: ["10:00 AM", "11:30 AM", "01:00 PM", "04:00 PM"],
-        image: "https://images.unsplash.com/photo-1594824436998-d8f8955d9cb5?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+        image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
     },
     {
         id: 3,

@@ -1,302 +1,532 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Hospital | Your Health, Our Priority</title>
-    <link rel="stylesheet" href="./dist/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+    <link rel="stylesheet" href="./dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
     <!-- Navbar -->
     <nav class="bg-white shadow-md fixed w-full z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="flex items-center gap-2">
-                        <i class="fas fa-hospital text-primary text-2xl"></i>
-                        <span class="font-bold text-xl text-gray-900">CityCare Hospital</span>
-                    </a>
-                </div>
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-primary font-medium hover:text-secondary transition">Home</a>
-                    <a href="doctors.html" class="text-gray-600 hover:text-primary transition">Doctors</a>
-                    <a href="appointments.html" class="text-gray-600 hover:text-primary transition">My Appointments</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary transition">About</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary transition">Contact</a>
-                    <a href="doctors.html" class="bg-primary text-white px-5 py-2 rounded-md hover:bg-secondary transition shadow-sm">Book Appointment</a>
-                </div>
-                <!-- Mobile Menu Button -->
-                <div class="flex items-center md:hidden">
-                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-2">
+              <i class="fas fa-hospital text-primary text-2xl"></i>
+              <span class="font-bold text-xl text-gray-900"
+                >CityCare Hospital</span
+              >
+            </a>
+          </div>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="text-primary font-medium hover:text-secondary transition"
+              >Home</a
+            >
+            <a
+              href="doctors.html"
+              class="text-gray-600 hover:text-primary transition"
+              >Doctors</a
+            >
+            <a
+              href="appointments.html"
+              class="text-gray-600 hover:text-primary transition"
+              >My Appointments</a
+            >
+            <a href="#about" class="text-gray-600 hover:text-primary transition"
+              >About</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-600 hover:text-primary transition"
+              >Contact</a
+            >
+            <a
+              href="doctors.html"
+              class="bg-primary text-white px-5 py-2 rounded-md hover:bg-secondary transition shadow-sm"
+              >Book Appointment</a
+            >
+          </div>
+          <!-- Mobile Menu Button -->
+          <div class="flex items-center md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-gray-600 hover:text-primary focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
         </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html" class="block px-3 py-2 text-primary font-medium">Home</a>
-                <a href="doctors.html" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">Doctors</a>
-                <a href="appointments.html" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">My Appointments</a>
-                <a href="#about" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">About</a>
-                <a href="#contact" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">Contact</a>
-            </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a href="index.html" class="block px-3 py-2 text-primary font-medium"
+            >Home</a
+          >
+          <a
+            href="doctors.html"
+            class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary"
+            >Doctors</a
+          >
+          <a
+            href="appointments.html"
+            class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary"
+            >My Appointments</a
+          >
+          <a
+            href="#about"
+            class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary"
+            >About</a
+          >
+          <a
+            href="#contact"
+            class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary"
+            >Contact</a
+          >
         </div>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="pt-24 pb-12 md:pt-32 md:pb-20 bg-blue-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 md:pr-8 text-center md:text-left mb-10 md:mb-0">
-                    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
-                        Your Health,<br> <span class="text-primary">Our Priority</span>
-                    </h1>
-                    <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
-                        Experience world-class healthcare with top specialists. Book your appointment today and take the first step towards better health.
-                    </p>
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                        <a href="doctors.html" class="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-secondary transition shadow-lg text-center">Book an Appointment</a>
-                        <a href="doctors.html" class="bg-white text-primary border border-primary px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition shadow-sm text-center">Find a Doctor</a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 relative">
-                    <img src="https://images.unsplash.com/photo-1551076805-e18690c5e45e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hospital staff" class="rounded-lg shadow-xl object-cover h-96 w-full">
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center">
+          <div class="md:w-1/2 md:pr-8 text-center md:text-left mb-10 md:mb-0">
+            <h1
+              class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4"
+            >
+              Your Health,<br />
+              <span class="text-primary">Our Priority</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+              Experience world-class healthcare with top specialists. Book your
+              appointment today and take the first step towards better health.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+            >
+              <a
+                href="doctors.html"
+                class="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-secondary transition shadow-lg text-center"
+                >Book an Appointment</a
+              >
+              <a
+                href="doctors.html"
+                class="bg-white text-primary border border-primary px-8 py-3 rounded-md font-medium hover:bg-gray-50 transition shadow-sm text-center"
+                >Find a Doctor</a
+              >
             </div>
+          </div>
+          <div class="md:w-1/2 relative">
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
+              alt="Hospital staff"
+              class="rounded-lg shadow-xl object-cover h-96 w-full"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Search Section -->
-    <section class="py-10 bg-white relative -mt-10 mx-4 sm:mx-auto max-w-4xl rounded-xl shadow-lg border border-gray-100 z-10">
-        <div class="px-6">
-            <h2 class="text-xl font-bold mb-4 text-center">Quick Doctor Search</h2>
-            <form id="quick-search-form" class="flex flex-col md:flex-row gap-4" action="doctors.html" method="GET">
-                <div class="flex-1 relative">
-                    <i class="fas fa-search absolute left-3 top-3.5 text-gray-400"></i>
-                    <input type="text" name="doctorName" placeholder="Doctor name..." class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition">
-                </div>
-                <div class="flex-1 relative">
-                    <i class="fas fa-stethoscope absolute left-3 top-3.5 text-gray-400"></i>
-                    <select name="specialization" class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition appearance-none bg-white">
-                        <option value="">Any Specialization</option>
-                        <option value="Cardiology">Cardiology</option>
-                        <option value="Neurology">Neurology</option>
-                        <option value="Orthopedics">Orthopedics</option>
-                        <option value="Pediatrics">Pediatrics</option>
-                        <option value="Dermatology">Dermatology</option>
-                        <option value="General Medicine">General Medicine</option>
-                    </select>
-                </div>
-                <button type="submit" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition font-medium">Search</button>
-            </form>
-        </div>
+    <section
+      class="py-10 bg-white relative -mt-10 mx-4 sm:mx-auto max-w-4xl rounded-xl shadow-lg border border-gray-100 z-10"
+    >
+      <div class="px-6">
+        <h2 class="text-xl font-bold mb-4 text-center">Quick Doctor Search</h2>
+        <form
+          id="quick-search-form"
+          class="flex flex-col md:flex-row gap-4"
+          action="doctors.html"
+          method="GET"
+        >
+          <div class="flex-1 relative">
+            <i class="fas fa-search absolute left-3 top-3.5 text-gray-400"></i>
+            <input
+              type="text"
+              name="doctorName"
+              placeholder="Doctor name..."
+              class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
+            />
+          </div>
+          <div class="flex-1 relative">
+            <i
+              class="fas fa-stethoscope absolute left-3 top-3.5 text-gray-400"
+            ></i>
+            <select
+              name="specialization"
+              class="w-full pl-10 pr-4 py-3 rounded-md border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary outline-none transition appearance-none bg-white"
+            >
+              <option value="">Any Specialization</option>
+              <option value="Cardiology">Cardiology</option>
+              <option value="Neurology">Neurology</option>
+              <option value="Orthopedics">Orthopedics</option>
+              <option value="Pediatrics">Pediatrics</option>
+              <option value="Dermatology">Dermatology</option>
+              <option value="General Medicine">General Medicine</option>
+            </select>
+          </div>
+          <button
+            type="submit"
+            class="bg-primary text-white px-6 py-3 rounded-md hover:bg-secondary transition font-medium"
+          >
+            Search
+          </button>
+        </form>
+      </div>
     </section>
 
     <!-- Services Section -->
     <section class="py-16 md:py-24 bg-gray-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Departments</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">We offer a wide range of medical services provided by expert specialists in modern facilities.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-heartbeat text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Cardiology</h3>
-                    <p class="text-gray-600">Expert care for your heart with advanced diagnostic and treatment options.</p>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-brain text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Neurology</h3>
-                    <p class="text-gray-600">Comprehensive neurological care for brain, spine, and nervous system disorders.</p>
-                </div>
-
-                <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-bone text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Orthopedics</h3>
-                    <p class="text-gray-600">Advanced treatments for bone, joint, and muscle conditions.</p>
-                </div>
-
-                <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-child text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Pediatrics</h3>
-                    <p class="text-gray-600">Compassionate and specialized healthcare for infants, children, and adolescents.</p>
-                </div>
-
-                <!-- Service 5 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-allergies text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">Dermatology</h3>
-                    <p class="text-gray-600">Specialized medical and cosmetic care for your skin, hair, and nails.</p>
-                </div>
-
-                <!-- Service 6 -->
-                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group">
-                    <div class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition">
-                        <i class="fas fa-stethoscope text-2xl text-primary group-hover:text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">General Medicine</h3>
-                    <p class="text-gray-600">Comprehensive adult care with a focus on prevention and wellness.</p>
-                </div>
-            </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Departments</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            We offer a wide range of medical services provided by expert
+            specialists in modern facilities.
+          </p>
         </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service 1 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-heartbeat text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Cardiology</h3>
+            <p class="text-gray-600">
+              Expert care for your heart with advanced diagnostic and treatment
+              options.
+            </p>
+          </div>
+
+          <!-- Service 2 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-brain text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Neurology</h3>
+            <p class="text-gray-600">
+              Comprehensive neurological care for brain, spine, and nervous
+              system disorders.
+            </p>
+          </div>
+
+          <!-- Service 3 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-bone text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Orthopedics</h3>
+            <p class="text-gray-600">
+              Advanced treatments for bone, joint, and muscle conditions.
+            </p>
+          </div>
+
+          <!-- Service 4 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-child text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Pediatrics</h3>
+            <p class="text-gray-600">
+              Compassionate and specialized healthcare for infants, children,
+              and adolescents.
+            </p>
+          </div>
+
+          <!-- Service 5 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-allergies text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">Dermatology</h3>
+            <p class="text-gray-600">
+              Specialized medical and cosmetic care for your skin, hair, and
+              nails.
+            </p>
+          </div>
+
+          <!-- Service 6 -->
+          <div
+            class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition text-center group"
+          >
+            <div
+              class="w-16 h-16 mx-auto bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition"
+            >
+              <i
+                class="fas fa-stethoscope text-2xl text-primary group-hover:text-white"
+              ></i>
+            </div>
+            <h3 class="text-xl font-bold mb-2">General Medicine</h3>
+            <p class="text-gray-600">
+              Comprehensive adult care with a focus on prevention and wellness.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Why Choose Us -->
     <section class="py-16 md:py-24 bg-white" id="about">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hospital Facility" class="rounded-xl shadow-lg">
-                </div>
-                <div class="md:w-1/2">
-                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Why Choose CityCare Hospital?</h2>
-                    <p class="text-gray-600 mb-8">We are committed to providing the highest quality healthcare with compassion and excellence. Our patient-centered approach ensures you receive the best care possible.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-user-md text-green-600"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold">Experienced Doctors</h4>
-                                <p class="text-gray-600 mt-1">Our team consists of highly qualified and renowned medical professionals.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-calendar-check text-blue-600"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold">Easy Appointment Booking</h4>
-                                <p class="text-gray-600 mt-1">Schedule your visits effortlessly through our modern online booking system.</p>
-                            </div>
-                        </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <img
+              src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Hospital Facility"
+              class="rounded-xl shadow-lg"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              Why Choose CityCare Hospital?
+            </h2>
+            <p class="text-gray-600 mb-8">
+              We are committed to providing the highest quality healthcare with
+              compassion and excellence. Our patient-centered approach ensures
+              you receive the best care possible.
+            </p>
 
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-headset text-purple-600"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold">24/7 Support</h4>
-                                <p class="text-gray-600 mt-1">Round-the-clock emergency care and customer support when you need it most.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 mt-1">
-                                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-hospital-alt text-yellow-600"></i>
-                                </div>
-                            </div>
-                            <div class="ml-4">
-                                <h4 class="text-xl font-bold">Modern Facilities</h4>
-                                <p class="text-gray-600 mt-1">State-of-the-art medical equipment and comfortable patient rooms.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <div
+                    class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-user-md text-green-600"></i>
+                  </div>
                 </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold">Experienced Doctors</h4>
+                  <p class="text-gray-600 mt-1">
+                    Our team consists of highly qualified and renowned medical
+                    professionals.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <div
+                    class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-calendar-check text-blue-600"></i>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold">Easy Appointment Booking</h4>
+                  <p class="text-gray-600 mt-1">
+                    Schedule your visits effortlessly through our modern online
+                    booking system.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <div
+                    class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-headset text-purple-600"></i>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold">24/7 Support</h4>
+                  <p class="text-gray-600 mt-1">
+                    Round-the-clock emergency care and customer support when you
+                    need it most.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 mt-1">
+                  <div
+                    class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-hospital-alt text-yellow-600"></i>
+                  </div>
+                </div>
+                <div class="ml-4">
+                  <h4 class="text-xl font-bold">Modern Facilities</h4>
+                  <p class="text-gray-600 mt-1">
+                    State-of-the-art medical equipment and comfortable patient
+                    rooms.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white pt-16 pb-8" id="contact">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-                <!-- Brand -->
-                <div>
-                    <a href="index.html" class="flex items-center gap-2 mb-4">
-                        <i class="fas fa-hospital text-primary text-3xl"></i>
-                        <span class="font-bold text-2xl">CityCare</span>
-                    </a>
-                    <p class="text-gray-400 mb-6">Providing world-class medical services and compassionate care to our community.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">Quick Links</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="doctors.html" class="text-gray-400 hover:text-white transition">Find a Doctor</a></li>
-                        <li><a href="appointments.html" class="text-gray-400 hover:text-white transition">My Appointments</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">Contact Us</h3>
-                    <ul class="space-y-4 text-gray-400">
-                        <li class="flex items-start">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
-                            <span>123 Health Avenue, Medical District, City, 10001</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li class="flex items-center">
-                            <i class="fas fa-envelope mr-3 text-primary"></i>
-                            <span>info@citycarehospital.com</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Emergency -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">Emergency</h3>
-                    <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-red-500">
-                        <p class="text-gray-300 mb-2">For medical emergencies, call our 24/7 hotline:</p>
-                        <p class="text-2xl font-bold text-red-400"><i class="fas fa-phone-volume mr-2"></i> 911</p>
-                    </div>
-                    <div class="mt-4">
-                        <p class="text-sm text-gray-400">Ambulance Service: +1 (555) 999-9999</p>
-                    </div>
-                </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
+        >
+          <!-- Brand -->
+          <div>
+            <a href="index.html" class="flex items-center gap-2 mb-4">
+              <i class="fas fa-hospital text-primary text-3xl"></i>
+              <span class="font-bold text-2xl">CityCare</span>
+            </a>
+            <p class="text-gray-400 mb-6">
+              Providing world-class medical services and compassionate care to
+              our community.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
-            <div class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-500 text-sm">© 2026 CityCare Hospital. All rights reserved.</p>
-                <div class="space-x-4 mt-4 md:mt-0 text-sm text-gray-500">
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition">Terms of Service</a>
-                </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">
+              Quick Links
+            </h3>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="doctors.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >Find a Doctor</a
+                >
+              </li>
+              <li>
+                <a
+                  href="appointments.html"
+                  class="text-gray-400 hover:text-white transition"
+                  >My Appointments</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#about"
+                  class="text-gray-400 hover:text-white transition"
+                  >About Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">
+              Contact Us
+            </h3>
+            <ul class="space-y-4 text-gray-400">
+              <li class="flex items-start">
+                <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                <span>123 Health Avenue, Medical District, City, 10001</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                <span>+1 (555) 123-4567</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope mr-3 text-primary"></i>
+                <span>info@citycarehospital.com</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Emergency -->
+          <div>
+            <h3 class="text-lg font-bold mb-4 border-b border-gray-800 pb-2">
+              Emergency
+            </h3>
+            <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-red-500">
+              <p class="text-gray-300 mb-2">
+                For medical emergencies, call our 24/7 hotline:
+              </p>
+              <p class="text-2xl font-bold text-red-400">
+                <i class="fas fa-phone-volume mr-2"></i> 911
+              </p>
             </div>
+            <div class="mt-4">
+              <p class="text-sm text-gray-400">
+                Ambulance Service: +1 (555) 999-9999
+              </p>
+            </div>
+          </div>
         </div>
+        <div
+          class="border-t border-gray-800 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center"
+        >
+          <p class="text-gray-500 text-sm">
+            © 2026 CityCare Hospital. All rights reserved.
+          </p>
+          <div class="space-x-4 mt-4 md:mt-0 text-sm text-gray-500">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
