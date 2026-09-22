@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments | CityCare Hospital</title>
+    <link rel="stylesheet" href="./dist/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <i class="fas fa-hospital text-primary text-2xl"></i>
+                        <span class="font-bold text-xl text-gray-900">CityCare Hospital</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary transition">Home</a>
+                    <a href="doctors.html" class="text-gray-600 hover:text-primary transition">Doctors</a>
+                    <a href="appointments.html" class="text-primary font-medium hover:text-secondary transition">My Appointments</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">Home</a>
+                <a href="doctors.html" class="block px-3 py-2 text-gray-600 hover:bg-gray-50 hover:text-primary">Doctors</a>
+                <a href="appointments.html" class="block px-3 py-2 text-primary font-medium">My Appointments</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-primary text-white pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">Manage Appointments</h1>
+            <p class="text-blue-100 max-w-2xl mx-auto">Book new consultations or view your existing appointments.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        
+        <!-- Toggle Tabs -->
+        <div class="flex justify-center mb-10">
+            <div class="inline-flex bg-gray-200 rounded-lg p-1">
+                <button id="tab-my-appointments" class="px-6 py-2 rounded-md text-sm font-medium transition-colors bg-white shadow text-primary">My Appointments</button>
+                <button id="tab-book-appointment" class="px-6 py-2 rounded-md text-sm font-medium transition-colors text-gray-600 hover:text-gray-900">Book Appointment</button>
+            </div>
+        </div>
+
+        <!-- Section: My Appointments -->
+        <section id="section-my-appointments" class="block">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="p-6 border-b border-gray-200 flex justify-between items-center bg-gray-50">
+                    <h2 class="text-xl font-bold text-gray-800">Your Upcoming Visits</h2>
+                    <button id="btn-book-new" class="bg-primary text-white px-4 py-2 rounded-md text-sm hover:bg-secondary transition shadow-sm">
+                        <i class="fas fa-plus mr-1"></i> Book New
+                    </button>
+                </div>
+                
+                <div class="p-6">
+                    <div id="appointments-list" class="space-y-4">
+                        <!-- Appointments will be rendered here -->
+                    </div>
+
+                    <!-- Empty State -->
+                    <div id="no-appointments-msg" class="hidden text-center py-10">
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="far fa-calendar-times text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">No appointments booked yet.</h3>
+                        <p class="text-gray-500 mb-6">You don't have any upcoming medical appointments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Book Appointment -->
+        <section id="section-book-appointment" class="hidden">
+            <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-6 md:p-10 max-w-4xl mx-auto">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6 border-b pb-4">Book an Appointment</h2>
+                
+                <!-- Success Message -->
+                <div id="booking-success" class="hidden mb-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-md">
+                    <div class="flex items-start">
+                        <i class="fas fa-check-circle text-green-500 mt-0.5 mr-3"></i>
+                        <div>
+                            <h3 class="text-green-800 font-medium">Appointment Confirmed!</h3>
+                            <p class="text-green-700 text-sm mt-1">Your appointment has been successfully booked. You can view it in your appointments list.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="appointment-form" class="space-y-8">
+                    <!-- Patient Info -->
+                    <div>
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                            <i class="fas fa-user-circle text-primary"></i> Patient Information
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                                <input type="text" id="patient-name" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Age *</label>
+                                    <input type="number" id="patient-age" min="0" max="120" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Gender *</label>
+                                    <select id="patient-gender" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none bg-white">
+                                        <option value="">Select</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                <input type="tel" id="patient-phone" pattern="[0-9]{10}" placeholder="10-digit number" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+                                <input type="email" id="patient-email" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Appointment Info -->
+                    <div class="border-t border-gray-200 pt-6">
+                        <h3 class="text-lg font-semibold text-gray-700 mb-4 flex items-center gap-2">
+                            <i class="fas fa-calendar-alt text-primary"></i> Appointment Details
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Select Specialization *</label>
+                                <select id="form-specialization" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none bg-white">
+                                    <option value="">Select Specialization</option>
+                                    <option value="Cardiology">Cardiology</option>
+                                    <option value="Neurology">Neurology</option>
+                                    <option value="Orthopedics">Orthopedics</option>
+                                    <option value="Pediatrics">Pediatrics</option>
+                                    <option value="Dermatology">Dermatology</option>
+                                    <option value="General Medicine">General Medicine</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Select Doctor *</label>
+                                <select id="form-doctor" required disabled class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none bg-gray-100 disabled:opacity-75">
+                                    <option value="">First select a specialization</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Doctor Info Card (Dynamic) -->
+                        <div id="doctor-info-card" class="hidden mt-4 p-4 bg-blue-50 border border-blue-100 rounded-md flex flex-col sm:flex-row gap-4 items-center">
+                            <!-- Injected via JS -->
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Select Date *</label>
+                                <input type="date" id="form-date" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Available Time Slot *</label>
+                                <select id="form-time" required disabled class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none bg-gray-100">
+                                    <option value="">Select a date first</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Reason for Visit *</label>
+                            <textarea id="form-reason" rows="3" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary outline-none" placeholder="Briefly describe your symptoms or reason for visit..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-200 flex justify-end">
+                        <button type="submit" class="bg-primary text-white px-8 py-3 rounded-md font-medium hover:bg-secondary transition shadow-md w-full md:w-auto">
+                            Confirm Appointment
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 text-center mt-auto">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="text-gray-500 text-sm">© 2026 CityCare Hospital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>
